@@ -7,3 +7,5 @@ Comprobar que si solo hay 1 elemento en la lista este tiene que ser terminal
 Comprobar que si solo hay 2 elementos en la lista tienen que ser terminales
 Comprobar que si tienes un nodo que sea primero si le añades un anterior pasa a ser no terminal
 Comprobar que si tienes un nodo que sea último si le añades un posterior pasa a ser no terminal
+Comprobar que si tienes un nodo se devuelve el objeto correctamente
+Comprobar que los elementos se modifican correctamente

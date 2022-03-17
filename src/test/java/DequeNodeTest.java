@@ -38,8 +38,40 @@ public class DequeNodeTest {
     }
 
     @Test
-    public void elementoNoTerminal()
-    {
-
+    public void elementoNoTerminal() {
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        assert sig.isNotATerminalNode();
+    }
+    @Test
+    public void deUltimoANoTerminal() {
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode aux = new  DequeNode(0,null,fin);
+        fin.setNext(aux);
+        assert(fin.isNotATerminalNode());
+    }
+    @Test
+    public void dePrimeroANoTerminal() {
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode prev = new  DequeNode(0,NodoUnico,null);
+        NodoUnico.setPrevious(prev);
+        assert(NodoUnico.isNotATerminalNode());
+    }
+    @Test
+    public void comprobarObjeto() {
+        assertEquals(NodoUnico.getItem(),0);
+    }
+    @Test
+    public void comprobarModObj() {
+        NodoUnico.setItem(2);
+        assertEquals(NodoUnico.getItem(),2);
     }
 }
