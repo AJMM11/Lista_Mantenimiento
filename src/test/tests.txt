@@ -9,3 +9,11 @@ Comprobar que si tienes un nodo que sea primero si le añades un anterior pasa a
 Comprobar que si tienes un nodo que sea último si le añades un posterior pasa a ser no terminal
 Comprobar que si tienes un nodo se devuelve el objeto correctamente
 Comprobar que los elementos se modifican correctamente
+Comprobar que si el indice supera la cantidad de elementos se devuelve un nodo null
+Comprobar que se selecciona el nodo correctamente
+Comprobar que se encuentra el nodo correctamente
+Comprobar que si no lo encuentra devuelve null
+Comprobar que se borra correctamente cuando el elemento es el ultimo de la cola
+Comprobar que se borra correctamente cuando el elemento es el primero de la cola
+Comprobar que se borra correctamente cuando el elemento es el unico de la cola
+Comprobar que se borra correctamente cuando el elemento es no terminal

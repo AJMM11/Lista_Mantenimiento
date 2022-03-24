@@ -74,4 +74,44 @@ public class DequeNodeTest {
         NodoUnico.setItem(2);
         assertEquals(NodoUnico.getItem(),2);
     }
+    @Test
+    public void comprobarPos(){
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        assertEquals(sig.getAt(2),fin);
+    }
+    @Test
+    public void comprobarNullInd()
+    {
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        assertEquals(sig.getAt(4),null);
+    }
+    @Test
+    public void comprobarEncuentraObj(){
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        assertEquals(sig.find(fin),fin);
+    }
+    @Test
+    public void comprobarNoEncuentraObj(){
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode aux = new DequeNode(0,null,null);
+        assertEquals(sig.find(aux),null);
+    }
+    @Test
+    public void comprobarBorrarUnico(){
+
+        NodoUnico.delete(NodoUnico);
+        assertEquals(NodoUnico.find(NodoUnico),null);
+    }
 }

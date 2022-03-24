@@ -42,6 +42,64 @@ public class DequeNode<T> {
         this.previous = previous;
     }
 
+    public DequeNode getAt(int ind) {
+        DequeNode<T> aux = this;
+        try {
+            while(!aux.isFirstNode()) {
+                aux = aux.getPrevious();
+            }
+            for(int i = 0;i<ind;i++) {
+                aux = aux.getNext();
+            }
+        }catch(NullPointerException e) {
+            aux = null;
+        }
+
+        return aux;
+    }
+    public DequeNode find(DequeNode<T> obj){
+        DequeNode<T> aux = this;
+
+            while(!aux.isFirstNode()) {
+                aux = aux.getPrevious();
+            }
+            while(!aux.isLastNode() && !obj.equals(aux)){
+                aux = aux.getNext();
+            }
+        if(!aux.equals(obj)) {
+            aux = null;
+        }
+        return aux;
+    }
+
+    public void delete(DequeNode<T> obj){
+        DequeNode<T> aux = find(obj);
+
+
+        if(aux.isNotATerminalNode()) {
+            DequeNode<T> prev = aux.getPrevious();
+            prev.setNext(aux.getNext());
+            aux.getNext().setPrevious(prev);
+            aux = null;
+            obj = null;
+        } else if(aux.isFirstNode() && aux.isLastNode()) {
+            aux = null;
+            obj = null;
+            this.setItem(null);
+        }else if(aux.isFirstNode()) {
+            aux.getNext().setPrevious(null);
+            aux = null;
+            obj = null;
+        }else{
+            aux.getPrevious().setNext(null);
+            obj = null;
+            aux = null;
+        }
+
+
+
+    }
+
     public boolean isFirstNode() {
         return previous == null;
     }
