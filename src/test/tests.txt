@@ -15,5 +15,5 @@ Comprobar que se encuentra el nodo correctamente
 Comprobar que si no lo encuentra devuelve null
 Comprobar que se borra correctamente cuando el elemento es el ultimo de la cola
 Comprobar que se borra correctamente cuando el elemento es el primero de la cola
-Comprobar que se borra correctamente cuando el elemento es el unico de la cola
 Comprobar que se borra correctamente cuando el elemento es no terminal
+Comprobar que cuando se intenta borrar el elemento unico el sistema lanza una excepcion

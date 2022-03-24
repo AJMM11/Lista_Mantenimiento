@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DequeNodeTest {
 
@@ -111,7 +112,40 @@ public class DequeNodeTest {
     @Test
     public void comprobarBorrarUnico(){
 
+
+        assertThrows(RuntimeException.class,()->NodoUnico.delete(NodoUnico));
+    }
+    @Test
+    public void comprobarBorrarNoTerm(){
+
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode aux = new DequeNode(0,null,null);
+        NodoUnico.delete(sig);
+        assertEquals(NodoUnico.getNext(),fin);
+    }
+    @Test
+    public void comprobarBorrarPrim(){
+
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode aux = new DequeNode(0,null,null);
         NodoUnico.delete(NodoUnico);
-        assertEquals(NodoUnico.find(NodoUnico),null);
+        assertEquals(sig.getPrevious(),null);
+    }
+    @Test
+    public void comprobarBorrarUltimo(){
+
+        DequeNode sig = new  DequeNode(0,null,NodoUnico);
+        NodoUnico.setNext(sig);
+        DequeNode fin = new DequeNode(0,null,sig);
+        sig.setNext(fin);
+        DequeNode aux = new DequeNode(0,null,null);
+        NodoUnico.delete(fin);
+        assertEquals(sig.getNext(),null);
     }
 }

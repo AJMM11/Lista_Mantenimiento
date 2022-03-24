@@ -83,9 +83,8 @@ public class DequeNode<T> {
             aux = null;
             obj = null;
         } else if(aux.isFirstNode() && aux.isLastNode()) {
-            aux = null;
-            obj = null;
-            this.setItem(null);
+            throw new RuntimeException();
+
         }else if(aux.isFirstNode()) {
             aux.getNext().setPrevious(null);
             aux = null;
